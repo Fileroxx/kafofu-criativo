@@ -7,7 +7,33 @@
     <title>Kafofu Criativo - Um novo conceito de criatividade</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="shortcut icon" href="assets/icon.webp" type="image/x-icon">
-    <style>
+   <!-- Default theme. ~960B -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@vime/core@^5/themes/default.css"
+    />
+
+    <!-- Optional light theme (extends default). ~400B -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@vime/core@^5/themes/light.css"
+    />
+
+    <!-- Library and all of its components are lazy loaded, so nothing to sweat about here. ~3kB -->
+    <script
+    type="module"
+    src="https://cdn.jsdelivr.net/npm/@vime/core@^5/dist/vime/vime.esm.js"
+    ></script>
+
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+   
+   <style>
+
 
         * {
             padding: 0;
@@ -17,6 +43,10 @@
 
         body {
             scroll-behavior: smooth;
+            background: url('./assets/bg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
         }
 
         a { 
@@ -24,210 +54,301 @@
         }
 
         main {
-            background-repeat: no-repeat;
-            background-size: cover;
-
-            transition: .5s;
+            padding-top: 5rem;
+            padding-bottom: 5rem;
         }
 
-        .logo {
+        main .titulo {
+            text-align: center;
+            padding-bottom: 2rem;
+        }
+
+        main .titulo img {
+            width: 50%;
+        }
+
+        main .luciano {
+            text-align: center;
+  
+        }
+
+        main .luciano img {
+            width: 18%;
+            position: absolute;
+            z-index: 999;
+            padding-top: 10%;
+            left: 70%;
+        }
+
+        main .marciele {
             text-align: center;
         }
 
-        main .carousel-one {
-            background: url('./assets/tela1.png');
-            background-repeat: no-repeat;
-            background-size: cover;
-            padding-top: 5rem;
-            padding-bottom: 5rem;
+        main .marciele img {
+            position: absolute;
+            width: 15%;
+            padding-top: 10%;
+            z-index: 999;
         }
 
-        main .carousel-two {
-            background: url('./assets/tela9.png');
-            background-repeat: no-repeat;
-            background-size: 90%;
-            background-position: right;
-            padding-top: 6rem;
-            padding-bottom: 6rem;
+        main .video {
+            text-align: center;
+            position: relative;
+            z-index: 2;
         }
 
-        main .carousel-two .temas img {
-            width: 70%;
-         
-        }
-
-        main .carousel-two .botao {
-            text-align: left;
-        }
-
-        main .carousel-two .botao img {
-            width: 70%;
-            padding-left: 0rem;
-
-        }
-
-        main .carousel-three {
-            background: url('./assets/tela-10.png');
-            background-repeat: no-repeat;
-            background-size: cover;
-            padding-top: 5rem;
-            padding-bottom: 5rem;
-        }
-    
-        main .carousel-three .botao img {
-            width: 60%;
-        }
-
-        main .logo img {
-            width: 40%;
-        }
 
         main .botao {
+            text-align: center;
+            padding-top: 3rem;
+        }
+
+        main .botao img {
+            animation: pulse 1s infinite;
+        }
+
+        @media screen and (max-width: 991px) {
+
+            main .titulo img {
+                width: 100%;
+            }
+
+            main .botao img {
+                width: 80%;
+            }
+
+            main .luciano {
+                display: none;
+            }
+
+            main .marciele {
+                display: none;
+            }
+
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        main .linha {
+            padding-top: 3rem;
+        }
+
+
+        #apresentacao {
+
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        #apresentacao .titulo {
+            text-align: center;
+        }
+
+        #apresentacao .titulo img {
+            width: 40%;
+        }
+    
+        #apresentacao .bullet-points {
             text-align: center;
             padding-top: 2rem;
             padding-bottom: 2rem;
         }
 
-        main .botao img {
-            width: 25%;
-            transition: .5s;
-        }
-
-        main .botao img:hover {
-            transform: scale(1.03);
-            cursor: pointer;
-        }
-
-        @media screen and (max-width: 991px) {
-            main .logo img {
-                width: 90%;
-            }
-
-            main .botao img {
-                width: 90%;
-                transition: .5s;
-            }
-
-            main .botao img:hover {
-                transform: scale(1.01);
-            }
-
-            main .carousel-two {
-                background-size: cover;
-                text-align: center;
-            }
-            
-            main .carousel-two .botao {
-                text-align: center;
-            }
-
-            main .carousel-two .botao img {
-                padding: 0;
-                width: 90%;
-            }
-
-            main .carousel-three .botao img {
-                width: 90%;
-            }
-
-
-        }
-
-        #apresentacao {
-            background: url('./assets/tela2a.png');
-            background-repeat: no-repeat;
-            background-size: cover;
-            padding-top: 5rem;
-            padding-bottom: 5rem;
-        }
-
-        #apresentacao .descricao {
-            text-align: left;
-        }
-    
-        #apresentacao .descricao img {
-            width: 80%;
+        #apresentacao .bullet-points img {
+            width: 40%;
         }
         
+        #apresentacao .luemarcy {
+            text-align: center;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
         #apresentacao .botao {
-            text-align: left;
+            text-align: center;
         }
 
         #apresentacao .botao img {
-            width: 70%;
+            width: 25%;
             transition: .5s;
-            padding-left: 4rem;
         }
 
         #apresentacao .botao img:hover {
             cursor: pointer;
             transform: scale(1.02);
         }
+        
+        #apresentacao .linha {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
 
         @media screen and (max-width: 991px) {
-            #apresentacao .botao {
-                text-align: center;
+            #apresentacao .titulo img {
+                width: 100%;
             }
 
-
+            #apresentacao .bullet-points img {
+                width: 100%;
+            }
 
             #apresentacao .botao img {
-                width: 90%;
-                transition: .5s;
-                padding: 0;
-                padding-top: 1rem;
-            }
-
-            #apresentacao .botao img:hover {
-                transform: scale(1.02);
-            }
-
-            #apresentacao .descricao {
-                text-align: center;
-            }
-
-            #apresentacao .descricao img {
-                width: 100%;
+                width: 60%;
             }
 
         }
 
         #depoimento {
-            background: url('./assets/tela6.png');
-            background-repeat: no-repeat;
-            background-size: cover;
+    
+            
             padding-top: 4rem;
             padding-bottom: 4rem;
         }
 
-        #depoimento .texto img{
-            width: 100%;
+        #depoimento .texto {
+            text-align: center;
         }
 
-        #saiba {
-            background: url('./assets/tela3.png');
-            background-repeat: no-repeat;
-            background-size: cover;
+        #depoimento .texto img{
+            width: 50%;
+        }
+
+        #depoimento .linha {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        @media screen and (max-width: 991px) {
+            #depoimento .texto img {
+                width: 100%;
+            }
+
+            #depoimento .depoimento {
+                padding-top: 2rem; 
+                padding-bottom: 2rem;
+            }
+        }
+
+        #produtos {
             padding-top: 5rem;
             padding-bottom: 5rem;
         }
 
-        #saiba .titulo {
+        #produtos .titulo {
             text-align: center;
         }
 
-        #saiba .titulo img {
-            width: 50%;
+        #produtos .titulo img {
+            width: 40%;
+        }
+
+        #produtos .produto {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        #produtos .botao {
+            text-align: center;
+        }
+
+        #produtos .linha {
+            padding-top: 2rem;
+            padding-top: 2rem;
         }
 
         @media screen and (max-width: 991px) {
-            #saiba .titulo img {
+
+            #produtos {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+
+            #produtos .titulo img {
                 width: 100%;
             }
         }
 
+        #destacar {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        #destacar .titulo {
+            text-align: center;
+        }
+
+        #destacar .titulo img {
+            width: 40%;
+        }
+
+        #destacar .texto {
+            text-align: center;
+            padding-top: 2rem;
+        }
+        
+        #destacar .texto img {
+            width: 50%;
+        }
+
+        #destacar .botao {
+            text-align: center;
+            padding-top: 2rem;
+            position: relative;
+        }
+
+        #destacar .botao img {
+            width: 25%;
+        }
+
+        #destacar .mascote{
+            text-align: right;
+        }
+
+        #destacar .mascote img {
+            width: 15%;
+            position: absolute;
+            left: 70%;
+           
+        
+        }
+
+        #destacar .linha {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        @media screen and (max-width: 991px) {
+            #destacar .titulo img {
+                width: 100%;
+            }
+
+            #destacar .texto img {
+                width: 100%;
+            }
+            
+            #destacar .botao img {
+                width: 60%;
+            }
+
+            #destacar .mascote {
+                display: none;
+            }
+        }
+
         #planos {
-            background: #000;
+    
             padding-top: 5rem;
             padding-bottom: 5rem;
         }
@@ -249,54 +370,165 @@
             cursor: pointer;
         }
 
+        #planos .linha {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
         @media screen and (max-width: 991px) {
             #planos .titulo img {
                 width: 100%;
             }
+
+            #planos .content {
+                padding-top: 3rem;
+            }
+
+            #planos .content img {
+                width: 100%;
+            }
         }
 
-        #videos {
-            background: url('./assets/tela7.png');
-            background-repeat: no-repeat;
-            background-size: cover;
+        #escasso {
+
             padding-top: 5rem;
             padding-bottom: 5rem;
         }
 
-        #videos .texto img {
-            width: 60%;
+        #escasso .titulo img {
+            width: 40%;
         }
 
-        #videos .botao img {
-            width: 60%;
-            cursor: pointer;
+        #escasso .titulo {
+            text-align: center;
         }
 
-        #videos .video {
-            margin-top: 5rem;
+        #escasso .botao {
+            text-align: center;
+            padding-top: 2rem;
+        }
+        
+        #escasso .mascote {
+            text-align: left;
+            width: 100%;
+        }
+
+        #escasso .mascote img {
+            position: absolute;
+            width: 12%;
+            left: 10%;
+            
+        }
+
+        #escasso .linha {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
         }
 
         @media screen and (max-width: 991px) {
-            #videos .texto {
-                text-align: center;
+            #escasso .titulo img {
+                width: 100%;
             }
 
-            #videos .texto img {
-                width: 90%;
+            #escasso .botao img {
+                width: 80%;
             }
 
-            #videos .botao {
-                text-align: center;
+            #escasso .mascote {
+                display: none;
             }
+        }
 
-            #videos .botao img {
-                width: 90%;
-            }
+        #garantia {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        #garantia .selo {
+            text-align: center;
+        }
+
+        #garantia .selo img {
+            width: 30%;
+        }
+
+        #garantia .titulo {
+            text-align: center;
+        }
+
+        #garantia .titulo img {
+            width: 30%;
+        }
+
+        #garantia .texto {
+            text-align: center;
+            padding-top: 1rem;
+        }
+
+        #garantia .mascote {
+            text-align: right;
 
         }
 
+        #garantia .mascote img {
+            position: absolute;
+            width: 10%;
+            left: 90%;
+        }
+
+        #garantia .linha {
+            padding-top: 3rem;
+        }
+
+        @media screen and (max-width: 991px) {
+
+            #garantia {
+                padding-top: 2rem;
+            }
+
+            #garantia .selo img {
+                width: 80%;
+            }
+
+            #garantia .titulo img {
+                width: 100%;
+                padding-top: 1rem;
+            }
+
+            #garantia .texto img {
+                width: 100%;
+            }
+
+            #garantia .mascote {
+                display: none;
+            }
+        }
+
+        #faq {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        #faq .accordion {
+            width: 50%;
+            margin: 0 auto;
+            color: #fff;
+        }
+
+        #faq .accordion .accordion-button {
+            background: #ee8b0a;
+            color: #fff;
+            border: 0 !important;
+            font-size: 1.2rem;
+        }
+
+        @media screen and (max-width: 991px) {
+            #faq .accordion {
+                width: 100%;
+            }
+        }
+
         footer {
-            background-color: #000;
             padding-top: 3rem;
             padding-bottom: 3rem;
         }
@@ -313,33 +545,59 @@
         }
         
 
-        footer .whatsapp {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            border: 0;
-            background-color: #25d366;
-            color: #fff;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 100;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
 
-        footer .whatsapp a {
-            color: #fff;
-        }
 
+        .btn-whatsapp a {
+	color:#fff; 
+	text-decoration:none; 
+	display:block; 
+}
+.btn-whatsapp {
+    
+    position:fixed; 
+    right:75px; 
+    bottom:30px; 
+    z-index: 1;
+    transform: translate(-50%, -50%);  
+    background-color:rgb(37, 211, 102); 
+    width:60px; height:60px; 
+    text-align:center; 
+    line-height:58px; 
+    font-size:1.8em; 
+    color:#ffffff; 
+    font-weight:100; 
+    border-radius:50%; 
+}
+.btn-whatsapp:before,
+.btn-whatsapp:after
+{
+	content: '';
+    display:block;
+    position: absolute;
+    border-radius:50%;
+    border:1px solid #25d366;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    top: -20px;
+    animation: animate 1.5s linear infinite;
+    opacity:0;
+    backface-visibility:hidden;    
+}
+.pulsaDelay:after { animation-delay: .5s; }
+@keyframes animate {
+   0%   { transform: scale(0.5); opacity:0; }
+   50%  { opacity:1; }
+   100% { transform: scale(1.2); opacity:0; }
+}
         @media screen and (max-width: 991px) {
             footer .siga {
                 text-align: center;
                 width: 80%;
+            }
+
+            .btn-whatsapp {
+                right: 0%;
             }
         }
        
@@ -352,90 +610,71 @@
 <body>
 
     <main>
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <div class="container">
+
+            <div class="titulo">
+                <img class="img-fluid" src="assets/sucesso.png" alt="">
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-3">
+                    <div class="marciele">
+                        <img class="img-fluid" src="assets/marciele.png" alt="">
+                    </div>
+               
                 </div>
-                <div class="carousel-inner">
-                  <div class="carousel-item active carousel-one">  
-                    
-                    <div class="container">
-                        <div class="logo">
-                            <img class="img-fluid" src="assets/logo.png" alt="">
-                        </div>
 
-                        <div class="botao">
-                            <a href="#planos"><img src="assets/botao.png" alt=""></a>
-                        </div>
-                    </div>          
-
-                  </div>
-
-
-                  <div class="carousel-item carousel-two">
-                    <div class="container">
-                       <div class="row">
-
-                        <div class="col-xs-12 col-lg-5">
-                            <div class="temas">
-                                <img class="img-fluid" src="assets/temas.png" alt="">
-                            </div>
-                            <div class="botao">
-                                <a href="#planos"><img src="assets/quero.png" alt=""></a>
-                            </div>
-                       
-                        </div>
-
-                        <div class="col-xs-12 col-lg-7">
-
-                        </div>
-
-                       </div>
-                    </div>    
-                  </div>
-
-
-
-                  <div class="carousel-item carousel-three">
-                    <div class="container">
-                        <div class="row">
-
-                            <div class="col-lg-5">
-                                <div class="temas">
-                                    <img class="img-fluid" src="assets/istoe-o.png" alt="">
-                                </div>
-                                <div class="botao">
-                                    <a href="#planos"><img src="assets/quero.png" alt=""></a>
-                                </div>
-                           
-                            </div>
-    
-                            <div class="col-lg-7">
-    
-                            </div>
-    
-                           </div>
-                    </div>    
-                  </div>
-
-
+                <div class="col-lg-6">
+                    <div class="video">
+                        <vm-player autoplay style="--vm-player-theme: red">
+                            <!-- Loading a YouTube video. -->
+                            <vm-youtube video-id="V327uPPDikw" />
+                          
+                            <vm-ui>
+                              <vm-click-to-play />
+                              <vm-captions />
+                              <vm-poster />
+                              <vm-spinner />
+                              <vm-default-settings />
+                              <vm-controls pin="bottomLeft" active-duration="2750" full-width>
+                                <!-- 
+                                  These are all predefined controls that you can easily customize. You could also build 
+                                  your own controls completely from scratch.
+                                -->
+                                <vm-playback-control tooltip-direction="right" />
+                                <vm-volume-control />
+                                <vm-time-progress />
+                                <vm-control-spacer />
+                                <vm-caption-control />
+                                <vm-pip-control keys="p" />
+                                <vm-settings-control />
+                                <vm-fullscreen-control keys="f" tooltip-direction="left" />
+                              </vm-controls>
+                            </vm-ui>
+                          </vm-player>
+                    </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
 
+                <div class="col-lg-3">
+                    <div class="luciano">
+                        <img class="img-fluid" src="assets/luciano.png" alt="">
+                    </div>
+    
+                </div>
 
+            </div>
 
+            <div class="botao">
+                <a href="#planos">
+                    <img src="assets/garanta.png" alt="">
+                </a>
+            </div>
+        </div>
 
- 
+            <div class="linha">
+                <img class="img-fluid" src="assets/linha1.png" alt="">
+            </div>
 
 
     </main>
@@ -445,61 +684,116 @@
 
             <div class="row">
 
-                <div class="col-lg-6 col-xs-12">
-                    <div class="descricao">
-                        <img src="assets/uma-comunidade.png" alt="">
+                <div class="col-lg-12">
+                    <div class="titulo">
+                        <img class="img-fluid" src="assets/encontrar.png" alt="">
                     </div>
+
+                    <div class="bullet-points">
+                        <img class="img-fluid" src="assets/bullet-points.png" alt="">
+                    </div>
+
+                    <div class="luemarcy">
+                        <img class="img-fluid" src="assets/luemarcy.png" alt="">
+                    </div>
+
                     <div class="botao">
-                        <a href="#planos"><img src="assets/quero.png" alt=""></a>
+                        <a href="#planos">
+                            <img class="img-fluid" src="assets/assine.png" alt="">
+                        </a>
+           
                     </div>
+
                 </div>
 
-                <div class="col-lg-6 col-xs-12">
+
+            </div>
+
+        </div>
+
+        <div class="linha">
+            <img class="img-fluid" src="assets/linha2.png" alt="">
+        </div>
+    </section>
+
+    <section id="produtos">
+        <div class="container">
+
+                    <div class="row">
+
+                        <div class="col-lg-12">
+                            <div class="titulo">
+                                <img class="img-fluid" src="assets/produtos.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="produto">
+                                <img class="img-fluid" src="assets/produto1.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="produto">
+                                <img class="img-fluid" src="assets/produto2.png" alt="">
+                            </div>
+  
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="produto">
+                                <img class="img-fluid" src="assets/produto3.png" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="botao">
+                        <a href="#planos">
+                            <img class="img-fluid" src="assets/assine.png" alt="">
+                        </a>
+                       
+                    </div>
+  
+        </div>
+
+        <div class="linha">
+            <img class="img-fluid" src="assets/linha1.png" alt="">
+        </div>
+    </section>
+
+
+    <section id="destacar">
+        <div class="container">
+            
+            <div class="row">
+
+                <div class="col-lg-12">
+
+                    <div class="titulo">
+                        <img class="img-fluid" src="assets/destacar.png" alt="">
+                    </div>
+
+                    <div class="texto">
+                        <img class="img-fluid" src="assets/texto-destacar.png" alt="">
+                    </div>
+
+                    <div class="botao">
+                        <a href="#"><img class="img-fluid" src="assets/comprar.png" alt=""></a>
+                    </div>
+
+                    <div class="mascote">
+                        <img class="img-fluid" src="assets/mascote.png" alt="">
+                    </div>
 
                 </div>
 
             </div>
 
         </div>
-    </section>
 
-    <section id="saiba">
-        <div class="container">
-
-            <div class="row">
-
-                <div class="col-lg-12">
-                    
-                    <div class="titulo">
-                        <img class="img-fluid" src="assets/saiba-tudo.png" alt="">
-                    </div>
-
-                    <div class="row">
-
-                        <div class="col-lg-4">
-                            <div class="content">
-                                <img class="img-fluid" src="assets/t1.png" alt="">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4">
-                            <div class="content">
-                                <img class="img-fluid" src="assets/t3.png" alt="">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4">
-                            <div class="content">
-                                <img class="img-fluid" src="assets/t4.png" alt="">
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+        <div class="linha">
+            <img class="img-fluid" src="assets/linha2.png" alt="">
         </div>
     </section>
 
@@ -513,114 +807,252 @@
 
                 <div class="col-lg-4">
                     <div class="content">
-                        <a target="_blank" href="https://pay.kiwify.com.br/IigdJAH"><img class="img-fluid" src="assets/p1.png" alt=""></a>
+                        <a target="_blank" href="https://pay.kiwify.com.br/HrCpUvo">
+                            <img class="img-fluid" src="assets/mensal.png" alt="">
+                            <br><br>
+                            <div class="botao text-center">
+                                <img style="width: 60%;"  src="assets/assine.png" alt="">
+                            </div>
+                        </a>
                     </div>
                 </div>
 
                 <div class="col-lg-4">
                     <div class="content">
-                        <a target="_blank" href="https://pay.kiwify.com.br/qua5qQz"><img class="img-fluid" src="assets/p2.png" alt=""></a>
+                        <a target="_blank" href="https://pay.kiwify.com.br/UmTZs4v">
+                            <img class="img-fluid" src="assets/trimestral.png" alt="">
+                            <br><br>
+                            <div class="botao text-center">
+                                <img style="width: 60%;"  src="assets/assine.png" alt="">
+                            </div>
+                        </a>
                     </div>
                 </div>
                 
                 <div class="col-lg-4">
                     <div class="content">
-                        <a target="_blank" href="https://pay.kiwify.com.br/mI3oz9O"><img class="img-fluid" src="assets/p4.png" alt=""></a>
+                        <a target="_blank" href="https://pay.kiwify.com.br/9zerMZ0">
+                            <img class="img-fluid" src="assets/anual.png" alt="">
+                            <br><br>
+                            <div class="botao text-center">
+                                <a href="#planos">
+                                    <img style="width: 60%;"  src="assets/assine.png" alt="">
+                                </a>
+                            </div>
+                        </a>
                     </div>
                 </div>
 
 
             </div>
 
+        </div>
+
+        <div class="linha">
+            <img class="img-fluid" src="assets/linha1.png" alt="">
         </div>
     </section>
 
     <section id="depoimento">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5">
+                <div class="col-lg-12">
                     <div class="texto">
-                        <img class="img-fluid" src="assets/o-que-estao.png" alt="">
+                        <img class="img-fluid" src="assets/depoimentos.png" alt="">
                     </div>
                 </div>
 
-                <div class="col-lg-7">
-                    <div class="row">
-
-                        <div class="col-lg-4">
-                            <div class="depoimento">
-                                <img class="img-fluid" src="assets/f1.png" alt="">
-                            </div>
+                <div class="col-lg-12">
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <div class="depoimento">
+                            <img class="img-fluid" src="assets/f1.png" alt="">
                         </div>
-
-                        
-                        <div class="col-lg-4">
-                            <div class="depoimento">
-                                <img class="img-fluid" src="assets/f2.png" alt="">
-                            </div>
-                        </div>
-
-                                
-                        <div class="col-lg-4">
-                            <div class="depoimento">
-                                <img class="img-fluid" src="assets/f3.png" alt="">
-                            </div>
-                        </div>
-
-                        
-                        <div class="col-lg-4">
-                            <div class="depoimento">
-                                <img class="img-fluid" src="assets/f4.png" alt="">
-                            </div>
-                        </div>
-
-                                
-                        <div class="col-lg-4">
-                            <div class="depoimento">
-                                <img class="img-fluid" src="assets/f5.png" alt="">
-                            </div>
-                        </div>
-
-                        
-                        <div class="col-lg-4">
-                            <div class="depoimento">
-                                <img class="img-fluid" src="assets/f6.png" alt="">
-                            </div>
-                        </div>
-
                     </div>
+                    <div class="swiper-slide">
+                        <div class="depoimento">
+                            <img class="img-fluid" src="assets/f2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="depoimento">
+                            <img class="img-fluid" src="assets/f3.png" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="depoimento">
+                            <img class="img-fluid" src="assets/f4.png" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="depoimento">
+                            <img class="img-fluid" src="assets/f5.png" alt="">
+                        </div>
+                    </div>
+             
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination mt-4"></div>
+               
+    
+                </div>
                 </div>
 
 
             </div>
         </div>
+        <div class="linha">
+            <img class="img-fluid" src="assets/linha2.png" alt="">
+        </div>
     </section>
 
-    <section id="videos">
+    <section id="escasso">
         <div class="container">
             <div class="row">
 
-                <div class="col-lg-6">
-                    <div class="texto">
-                        <img class="img-fluid" src="assets/uamcomu.png" alt="">
+                <div class="col-lg-12">
+                    <div class="titulo">
+                        <img class="img-fluid" src="assets/texto-escasso.png" alt="">
                     </div>
+
                     <div class="botao">
-                        <a href="#planos"><img class="img-fluid" src="assets/quero.png" alt=""></a>
+                        <a href="#planos">
+                            <img class="img-fluid" src="assets/garanta.png" alt="">
+                        </a>
+                    </div>
+
+                    <div class="mascote">
+                        <img class="img-fluid" src="assets/luemarcy2.png" alt="">
                     </div>
                 </div>
 
-                <div class="col-lg-6">
+            </div>
+        </div>
+        <div class="linha">
+            <img class="img-fluid" src="assets/linha1.png" alt="">
+        </div>
+    </section>
 
-                    <div class="video ratio ratio-16x9">
-                        <iframe width="600" height="495" src="https://www.youtube.com/embed/UNGDRbGclSs" title="Comunidade de Artes Digitais Cartoon" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <section id="garantia">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-12">
+
+                    <div class="selo">
+                        <img class="img-fluid" src="assets/selo.png" alt="">
+                    </div>
+
+                    <div class="titulo">
+                        <img class="img-fluid" src="assets/setedias.png" alt="">
+                    </div>
+
+                    <div class="texto">
+                        <img class="img-fluid" src="assets/texto-garantia.png" alt="">
+                    </div>
+
+                    <div class="mascote">
+                        <img class="img-fluid" src="assets/lu.png" alt="">
                     </div>
 
                 </div>
 
             </div>
+
+        </div>
+
+        <div class="linha">
+            <img class="img-fluid" src="assets/linha2.png" alt="">
         </div>
     </section>
 
+    <section id="faq">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-12">
+
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                Como faço para comprar?
+                            </button>
+                          </h2>
+                          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Basta clicar em qualquer um dos botões desta página que você será direcionado para a página de pagamentos, onde irá preencher o seus dados e finalizar.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="flush-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                Quais as formas de pagamento?
+                            </button>
+                          </h2>
+                          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Cartão de crédito recorrente;
+                                Boleto bancário
+                                PIX
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="flush-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                Como irei acessar a Comunidade do Kafofu Criativo?
+                            </button>
+                          </h2>
+                          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                Você receberá um e-mail de confirmação de pagamento da plataforma Kiwify, pelo e-mail você cria sua senha e acessa a comunidade imediatamente.
+                            </div>
+                          </div>
+                          
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingFour">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                As artes são liberadas imediatamente?
+                              </button>
+                            </h2>
+                            <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                              <div class="accordion-body">
+                                Os assinantes anuais têm acesso imediato ao conteúdo já disponibilizado dentro da comunidade e os assinantes mensais terão acesso limitado.
+                              </div>
+                            </div>
+                            
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingFive">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                                Como serão entregues os novos kits digitais e arquivos?
+                              </button>
+                            </h2>
+                            <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                              <div class="accordion-body">
+                                Semanalmente entrará conteúdo novo, ou seja 1x por semana você terá acesso a alguma novidade do Kafofu Criativo, seja um kit digital, um arquivo para papelaria e artes para algum momento quente do mercado
+                              </div>
+                            </div>
+                            
+                        </div>
+                      </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
 
     <footer>
         <div class="container">
@@ -693,18 +1125,61 @@
 
         </div>
 
-        <div class="whatsapp">
-            <div class="container">
-                <a target="_blank" href="https://api.whatsapp.com/send?phone=5527996037314">
-                    <i class="fa-brands fa-whatsapp"></i>
-                </a>
-            </div>
+        <a href="https://www.seusite.com.br/whatsapp/" target="_blank">
+            <div class="btn-whatsapp pulsaDelay"><i class="fa-brands fa-whatsapp"></i></div>
+        </a>
+   
 
         </div>
 
     </footer>
 
+    <script>
+        window.player = document.querySelector('vm-player');
+    
+        const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
 
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+        },
+
+          // Responsive breakpoints
+        breakpoints: {
+            // when window width is >= 320px
+            320: {
+            slidesPerView: 1,
+            spaceBetween: 20
+            },
+            // when window width is >= 480px
+            761: {
+            slidesPerView: 2,
+            spaceBetween: 30
+            },
+            // when window width is >= 640px
+            991: {
+            slidesPerView: 4,
+            spaceBetween: 40
+            }
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+        });
+
+    </script>
+  
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js" integrity="sha512-rpLlll167T5LJHwp0waJCh3ZRf7pO6IT1+LZOhAyP6phAirwchClbTZV3iqL3BMrVxIYRbzGTpli4rfxsCK6Vw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
