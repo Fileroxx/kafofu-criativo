@@ -53,6 +53,11 @@
             text-decoration: none;
         }
 
+
+        main, #apresentacao, #produtos, #destacar, #planos, #depoimentos, #escasso, #garantia, #faq {
+            visibility: hidden;
+        }
+
         main {
             padding-top: 5rem;
             padding-bottom: 5rem;
@@ -109,12 +114,17 @@
 
         @media screen and (max-width: 991px) {
 
+            main {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+
             main .titulo img {
                 width: 100%;
             }
 
             main .botao img {
-                width: 80%;
+                width: 100%;
             }
 
             main .luciano {
@@ -196,6 +206,17 @@
         }
 
         @media screen and (max-width: 991px) {
+
+            #apresentacao {
+                padding-top: 0rem !important;
+                padding-bottom: 0rem;
+            }
+
+            #apresentacao .linha {
+                padding-top: 0rem;
+                padding-bottom: 0rem;
+            }
+
             #apresentacao .titulo img {
                 width: 100%;
             }
@@ -205,7 +226,7 @@
             }
 
             #apresentacao .botao img {
-                width: 60%;
+                width: 80%;
             }
 
         }
@@ -231,6 +252,12 @@
         }
 
         @media screen and (max-width: 991px) {
+
+            #depoimento {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+
             #depoimento .texto img {
                 width: 100%;
             }
@@ -238,6 +265,10 @@
             #depoimento .depoimento {
                 padding-top: 2rem; 
                 padding-bottom: 2rem;
+            }
+
+            #depoimento .linha {
+                padding-bottom: 0;
             }
         }
 
@@ -330,6 +361,12 @@
         }
 
         @media screen and (max-width: 991px) {
+
+            #destacar {
+                padding-top: 2rem;
+                padding-bottom: 0;
+            }
+
             #destacar .titulo img {
                 width: 100%;
             }
@@ -339,7 +376,7 @@
             }
             
             #destacar .botao img {
-                width: 60%;
+                width: 80%;
             }
 
             #destacar .mascote {
@@ -376,6 +413,11 @@
         }
 
         @media screen and (max-width: 991px) {
+            #planos {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+
             #planos .titulo img {
                 width: 100%;
             }
@@ -386,6 +428,10 @@
 
             #planos .content img {
                 width: 100%;
+            }
+
+            #planos .linha {
+                padding-bottom: 0rem;
             }
         }
 
@@ -426,6 +472,12 @@
         }
 
         @media screen and (max-width: 991px) {
+
+            #escasso {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+
             #escasso .titulo img {
                 width: 100%;
             }
@@ -484,6 +536,7 @@
 
             #garantia {
                 padding-top: 2rem;
+                padding-bottom: 2rem;
             }
 
             #garantia .selo img {
@@ -523,6 +576,12 @@
         }
 
         @media screen and (max-width: 991px) {
+
+            #faq {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+
             #faq .accordion {
                 width: 100%;
             }
@@ -600,6 +659,8 @@
                 right: 0%;
             }
         }
+
+
        
  
     </style>
@@ -608,6 +669,13 @@
 
 </head>
 <body>
+
+    <section id="contagem-regressiva">
+        <div class="container">
+
+
+        </div>
+    </section>
 
     <main>
         <div class="container">
@@ -627,7 +695,7 @@
 
                 <div class="col-lg-6">
                     <div class="video">
-                        <vm-player autoplay style="--vm-player-theme: red">
+                        <vm-player muted autoplay style="--vm-player-theme: red">
                             <!-- Loading a YouTube video. -->
                             <vm-youtube video-id="V327uPPDikw" />
                           
@@ -1178,9 +1246,10 @@
         },
         });
 
+
     </script>
   
-
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js" integrity="sha512-rpLlll167T5LJHwp0waJCh3ZRf7pO6IT1+LZOhAyP6phAirwchClbTZV3iqL3BMrVxIYRbzGTpli4rfxsCK6Vw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
